@@ -140,7 +140,7 @@ DATABASES['default'].update(db_from_env)
 ALLOWED_HOSTS = ["imageai.herokuapp.com"]
 
 try:
-    from config.local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
 
