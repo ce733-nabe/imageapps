@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-xr3s@yo!3ipeuculyn$o=58o$mv9#a2eq4ch(@6c(8@$uo55jx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+
 #ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['imageai-20210831.herokuapp.com']
 #ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
