@@ -21,13 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-xr3s@yo!3ipeuculyn$o=58o$mv9#a2eq4ch(@6c(8@$uo55jx'
+SECRET_KEY = 'django-insecure-xr3s@yo!3ipeuculyn$o=58o$mv9#a2eq4ch(@6c(8@$uo55jx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ["imageai-20210831.herokuapp.com"]
+#ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 # Application definition
 
@@ -127,19 +128,16 @@ print(STATICFILES_DIRS)
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
 import dj_database_url
-#db_from_env = dj_database_url.config()
-#DATABASES['default'].update(db_from_env)
-db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 
-#ALLOWED_HOSTS = ["imageai.herokuapp.com"]
 
 try:
     from .local_settings import *
@@ -148,7 +146,7 @@ except ImportError:
 
 if not DEBUG:
     #SECRET_KEY = os.environ['SECRET_KEY']
-    SECRET_KEY ='django-insecure-xr3s@yo!3ipeuculyn$o=58o$mv9#a2eq4ch(@6c(8@$uo55jx'
-    print(SECRET_KEY)
+    #SECRET_KEY ='django-insecure-xr3s@yo!3ipeuculyn$o=58o$mv9#a2eq4ch(@6c(8@$uo55jx'
+    #print(SECRET_KEY)
     import django_heroku
     django_heroku.settings(locals())
