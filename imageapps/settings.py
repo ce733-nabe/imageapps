@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xr3s@yo!3ipeuculyn$o=58o$mv9#a2eq4ch(@6c(8@$uo55jx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
-#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 #ALLOWED_HOSTS = ['imageai-20210831.herokuapp.com']
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+#ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 #ALLOWED_HOSTS = ['*']
 
 # Application definition
@@ -123,10 +123,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/css/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/css/')]
-print(STATICFILES_DIRS)
+
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
@@ -139,10 +139,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import dj_database_url
 #db_from_env = dj_database_url.config()
 #DATABASES['default'].update(db_from_env)
-db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
-DATABASES['default'].update(db_from_env)
+#b_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+#DATABASES['default'].update(db_from_env)
 
-
+'''
 try:
     from .local_settings import *
 except ImportError:
@@ -150,5 +150,6 @@ except ImportError:
 
 if not DEBUG:
     #SECRET_KEY = os.environ['SECRET_KEY']
+'''
     import django_heroku
     django_heroku.settings(locals())
